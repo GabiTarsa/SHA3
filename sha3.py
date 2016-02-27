@@ -199,50 +199,6 @@ def xored_states(self,A,Ap):
                 Ax[x][y][z] = A[x][y][z] ^ Ap[x][y][z]
     return Ax
 
-def string_byte_to_bit(self, byte_str):
-    bit_str = ''
-    byte_str = byte_str.lower()
-    for i in range(len(byte_str)):
-        #TODO: fix try/except
-        try:            
-            if(byte_str[i]=='f'):
-                bit_str += '1111'
-            elif(byte_str[i]=='e'):
-                bit_str += '1110'
-            elif(byte_str[i]=='d'):
-                bit_str += '1101'
-            elif(byte_str[i]=='c'):
-                bit_str += '1100'
-            elif(byte_str[i]=='b'):
-                bit_str += '1011'
-            elif(byte_str[i]=='a'):
-                bit_str += '1010'
-            elif(byte_str[i]=='9'):
-                bit_str += '1001'
-            elif(byte_str[i]=='8'):
-                bit_str += '1000'
-            elif(byte_str[i]=='7'):
-                bit_str += '0111'
-            elif(byte_str[i]=='6'):
-                bit_str += '0110'
-            elif(byte_str[i]=='5'):
-                bit_str += '0101'
-            elif(byte_str[i]=='4'):
-                bit_str += '0100'
-            elif(byte_str[i]=='3'):
-                bit_str += '0011'
-            elif(byte_str[i]=='2'):
-                bit_str += '0010'
-            elif(byte_str[i]=='1'):
-                bit_str += '0001'
-            elif(byte_str[i]=='0'):
-                bit_str += '0000'
-            else:
-                print("Unknown character <%s> in byte to bit conversion"%byte_str[i]) 
-        except:
-            print("Unknown character <%s> in byte to bit conversion"%byte_str[i])
-    return bit_str
-
 def generate_hash(self):
     state_dict = self.gen_state_str()
     Ap = [[[0 for z in xrange(self.w)] for x in xrange(5)] for y in xrange(5)]
